@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blockchain Viewer</title>
+    <style>
+        body {
+            font-family: 'Courier New', monospace;
+            background: #f0f0f0;
+            padding: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .blockchain-container {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+
+        .block {
+            background: white;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .block-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #eee;
+        }
+
+        .block-number {
+            font-size: 1.2em;
+            font-weight: bold;
+            color: #2c3e50;
+        }
+
+        .nonce {
+            background: #f8f9fa;
+            padding: 5px 10px;
+            border-radius: 4px;
+            color: #6c757d;
+        }
+
+        .transactions-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+        }
+
+        .transactions-table th,
+        .transactions-table td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #eee;
+        }
+
+        .transactions-table th {
+            background: #f8f9fa;
+            font-weight: bold;
+            color: #2c3e50;
+        }
+
+        .hash {
+            font-family: monospace;
+            background: #f8f9fa;
+            padding: 5px;
+            border-radius: 4px;
+            word-break: break-all;
+            color: #6c757d;
+            font-size: 0.9em;
+        }
+
+        .block::after {
+            content: "↓";
+            display: block;
+            text-align: center;
+            font-size: 24px;
+            color: #6c757d;
+            margin-top: 20px;
+        }
+
+        .block:last-child::after {
+            display: none;
+        }
+
+        h3 {
+            color: #2c3e50;
+            margin: 15px 0;
+        }
+    </style>
+</head>
+<body>
+    <div id="blockchain-container" class="blockchain-container"></div>
+    <script type="module" src="./views/BlockchainView.js"></script>
+</body>
+</html>
